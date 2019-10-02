@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "crawl-classic"
-version = "0.1.1"
+version = "0.1.2"
 description = "Random tables for Dungeon Crawl Classics RPG."
 license = "OPEN GAME LICENSE Version 1.0a"
 authors = ["Seth Woodworth <seth@sethish.com>"]

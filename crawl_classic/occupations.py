@@ -1,14 +1,26 @@
 from __future__ import annotations
 from dataclasses import dataclass
+from typing import Optional, Union
 
 
 @dataclass
 class Occupation:
+    """Encapsulates a DCC Occupation, including what demi-races a lvl 0
+    character can class into."""
     title: str
     # TODO: weapon, subclass of equipment
     weapon: str
     # TODO: make equipment obj
-    goods: str
+    goods: Union[str, Equipment]
+    race: str = "Human"
+
+    def __post_init__(self, *args, **kwargs):
+        demi_races = ["Dwarven", "Elven", "Halfling"]
+        demi_race = [r for r in demi_races if r in self.title]
+        try:
+            self.race = demi_race[0]
+        except IndexError:
+            pass
 
 
 title = "title"
